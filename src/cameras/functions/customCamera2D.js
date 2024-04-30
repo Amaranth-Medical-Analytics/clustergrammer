@@ -1,4 +1,4 @@
-import * as EventEmitter from "event-emitter";
+import { EventEmitter } from "events";
 import mat4 from "gl-mat4";
 import interactionEvents from "../../interactions/interactionEvents";
 import camera_interaction from "./cameraInteraction";

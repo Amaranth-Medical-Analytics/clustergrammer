@@ -1,4 +1,4 @@
-import * as eventEmitter from "event-emitter";
+import { EventEmitter } from "events";
 import mouseChange from "mouse-change";
 import * as mouse from "mouse-event";
 import eventOffset from "mouse-event-offset";
@@ -18,7 +18,7 @@ function interactionEvents(opts = {}) {
     },
     opts
   );
-  const emitter = eventEmitter({});
+  const emitter = new EventEmitter({});
   const element = options.element;
   let enabled = false;
   // var mouseDown = false;
