@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { merge } from "lodash";
-import {produce} from "Immer"
+import { produce } from "immer";
 
 export type GeneDatum = {
   name: string;
