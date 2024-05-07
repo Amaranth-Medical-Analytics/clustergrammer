@@ -1,8 +1,8 @@
 import { EventEmitter } from "events";
 import mouseChange from "mouse-change";
 import * as mouse from "mouse-event";
-import * as eventOffset from "mouse-event-offset";
-import * as extend from "util-extend";
+import eventOffset from "mouse-event-offset";
+import extend from "util-extend";
 
 function Finger() {
   this.position = [0, 0];
@@ -11,7 +11,7 @@ function Finger() {
 
 // can pass in callback as second argument
 function interactionEvents(opts = {}) {
-  const options = extend.default(
+  const options = extend(
     {
       element: window,
       constrainZoom: false,
@@ -135,7 +135,7 @@ function interactionEvents(opts = {}) {
         activeCount = activeCount + 1;
         // update touch event & position
         newFinger.touch = newTouch;
-        eventOffset.default(newTouch, element, newFinger.position);
+        eventOffset(newTouch, element, newFinger.position);
         if (!first) {
           ended = false;
         }
@@ -167,7 +167,7 @@ function interactionEvents(opts = {}) {
       if (idx !== -1) {
         changed = true;
         fingers[idx].touch = movedTouch; // avoid caching touches
-        eventOffset.default(movedTouch, element, fingers[idx].position);
+        eventOffset(movedTouch, element, fingers[idx].position);
       }
     }
     if (changed) {
