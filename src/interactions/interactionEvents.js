@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import mouseChange from "mouse-change";
+import * as mouseChange from "mouse-change";
 import * as mouse from "mouse-event";
 import eventOffset from "mouse-event-offset";
 import extend from "util-extend";
@@ -32,7 +32,7 @@ function interactionEvents(opts = {}) {
   const ev = {};
   let buttons = 0;
   let mods = {};
-  const changeListener = mouseChange(
+  const changeListener = mouseChange.default(
     element,
     function (pbuttons, px, py, pmods) {
       buttons = pbuttons;
