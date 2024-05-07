@@ -9,7 +9,7 @@
   "exports": "./dist/index.js",
   "main": "./dist/index.js",
   "files": [
-    "dist/**/*"
+    "dist"
   ],
   "engines": {
     "node": "^14.13.1 || >=16.0.0"
