@@ -1,3 +1,4 @@
+import { drawCatTitles } from "../cats/functions/drawCatTitles";
 import interpFun from "../draws/interpFun";
 import { rotation } from "../draws/mat3Transform";
 
@@ -104,5 +105,10 @@ export default function make_row_text_args(regl, store, zoom_function) {
       range: [0, 1],
     },
   };
+
+  const rows = store.select("cat_data").row;
+  rows?.map((row, index) => {
+    drawCatTitles(regl, store, "row", row.cat_title, index);
+  });
   return args;
 }

@@ -29,7 +29,7 @@ export default function build_dendrogram_sliders(regl, store) {
         }
       });
     if (inst_axis === "row") {
-      axis_slider_container.style("right", "-10px").style("top", "80px");
+      axis_slider_container.style("right", "-40px").style("top", "80px");
     } else {
       axis_slider_container.style("left", "110px").style("bottom", "-65px");
     }

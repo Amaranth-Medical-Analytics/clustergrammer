@@ -2,6 +2,10 @@ import calcCatClusterBreakdown from "../cats/functions/calcCatClusterBreakdown";
 import { TOOLTIP_TYPES } from "../tooltip/tooltip.const";
 
 export function setTooltipText(store, mouseover) {
+  // added to not show Nan based tooltip
+  if (isNaN(mouseover?.value)) {
+    return;
+  }
   const {
     tooltip: { tooltip_type },
   } = store.selectAll();

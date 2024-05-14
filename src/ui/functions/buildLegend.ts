@@ -26,7 +26,7 @@ export const buildLegend = (store: NamespacedStore) => {
   legend.style.position = "absolute";
   legend.style.top = args.legend?.y ? String(args.legend?.y) : "0";
   const side = args.legend?.side ?? "left";
-  legend.style[side] = `calc(-${LEGEND_WIDTH} + ${args.legend?.x ?? "0px"}`;
+  legend.style[side] = `calc(-${LEGEND_WIDTH} + ${args.legend?.x ?? "-40px"}`;
   legend.style.display = "flex";
   legend.style.flexDirection = "column";
   legend.style.alignItems = "center";

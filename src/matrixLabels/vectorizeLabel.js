@@ -10,6 +10,9 @@ export default function vectorize_label(
     textAlign: "left",
     triangles: true,
     size: fontDetails,
+    styletags: {
+      bolds: true, // to show any bold text
+    },
     font: '"Open Sans", verdana, arial, sans-serif',
   };
 

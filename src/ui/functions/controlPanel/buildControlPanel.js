@@ -15,7 +15,8 @@ export default function build_control_panel(
   store,
   base_container,
   catArgsManager,
-  camerasManager
+  camerasManager,
+  order_options
 ) {
   const dispatch = store.dispatch;
   const i_height = 135;
@@ -157,7 +158,7 @@ export default function build_control_panel(
       const y_trans = y_offset_buttons - 2 * button_dim.buffer + 2;
       return "translate( " + x_offset + ", " + y_trans + ")";
     });
-  const order_options = ["clust", "sum", "var", "ini"];
+  // const order_options = ["clust", "sum", "var", "ini"];
   control_svg
     .append("rect")
     .attr("height", "1px")
@@ -270,8 +271,8 @@ export default function build_control_panel(
         "translate(" + button_dim.width / 2 + ", " + button_dim.height / 2 + ")"
       );
   });
-  buildReorderCatTitles(regl, store, catArgsManager, camerasManager);
-  buildReclusterSection(regl, store, catArgsManager, camerasManager);
+  // buildReorderCatTitles(regl, store, catArgsManager, camerasManager);
+  // buildReclusterSection(regl, store, catArgsManager, camerasManager);
   // row search
   // /////////////////
   const search_container = select(

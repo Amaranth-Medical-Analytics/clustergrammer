@@ -151,12 +151,13 @@ function clustergrammer_gl(
         },
         reorder: (
           axis: "row" | "col" | string,
-          order: "clust" | "sum" | "var" | "ini" | string
+          order: "clust" | "sum" | "var" | "ini" | "anno" | string
         ) => {
           const reorderState = store.select("order");
           const clean_order = order
             .replace("sum", "rank")
-            .replace("var", "rankvar");
+            .replace("var", "rankvar")
+            .replace("anno", "cat_0_index");
           if (reorderState.inst[axis] !== clean_order) {
             runReorder(
               regl,

@@ -1,3 +1,4 @@
+import { drawCatTitles } from "../cats/functions/drawCatTitles";
 import interpFun from "../draws/interpFun";
 import { rotation, scaling } from "../draws/mat3Transform";
 
@@ -132,5 +133,10 @@ export default function make_col_text_args(regl, store, zoom_function) {
       range: [0, 1],
     },
   };
+
+  const cols = [...store.select("cat_data").col].reverse();
+  cols?.map((col, index) => {
+    drawCatTitles(regl, store, "col", col.cat_title, index);
+  });
   return args;
 }
