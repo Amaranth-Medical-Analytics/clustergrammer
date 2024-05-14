@@ -38,5 +38,5 @@ export type ClustergrammerProps = {
   matrixColors?: { pos: Color; neg: Color };
   debug?: boolean;
   legend?: LegendProps;
-  order_options: Array<"var" | "anno" | "clust" | "ini" | "sum" | string>;
+  orderOptions: Array<"var" | "anno" | "clust" | "ini" | "sum" | string>;
 };

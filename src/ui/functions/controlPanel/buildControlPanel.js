@@ -16,7 +16,7 @@ export default function build_control_panel(
   base_container,
   catArgsManager,
   camerasManager,
-  order_options
+  orderOptions
 ) {
   const dispatch = store.dispatch;
   const i_height = 135;
@@ -208,7 +208,7 @@ export default function build_control_panel(
     // generate reorder buttons
     const button_group = reorder_buttons
       .selectAll("g")
-      .data(order_options)
+      .data(orderOptions)
       .enter()
       .append("g")
       .classed("reorder_buttons", true)

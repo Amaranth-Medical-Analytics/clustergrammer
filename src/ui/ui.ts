@@ -21,13 +21,8 @@ export class UI {
   constructor(props: UIProps) {
     const { regl, store, camerasManager, catArgsManager, args } = props;
 
-    const {
-      container,
-      showControls,
-      showDendroSliders,
-      legend,
-      order_options,
-    } = args;
+    const { container, showControls, showDendroSliders, legend, orderOptions } =
+      args;
 
     if (showControls) {
       build_control_panel(
@@ -36,7 +31,7 @@ export class UI {
         container,
         catArgsManager,
         camerasManager,
-        order_options
+        orderOptions
       );
     }
     if (showDendroSliders) {
