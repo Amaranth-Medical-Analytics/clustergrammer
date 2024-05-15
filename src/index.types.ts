@@ -23,6 +23,8 @@ export type LegendProps = {
   height?: string | number;
 };
 
+export type OrderOptions = "var" | "ini" | "clust" | "anno" | "sum";
+
 export type ClustergrammerProps = {
   use_hzome?: boolean;
   container: HTMLElement;
@@ -31,6 +33,7 @@ export type ClustergrammerProps = {
   height: number | string;
   showControls?: boolean;
   showDendroSliders?: boolean;
+  showReclusterControls?: boolean;
   onClick?: OnClickCallback;
   disableTooltip?: boolean;
   enabledTooltips?: Array<"dendro" | "cat" | "cell" | "label" | string>;
@@ -38,4 +41,5 @@ export type ClustergrammerProps = {
   matrixColors?: { pos: Color; neg: Color };
   debug?: boolean;
   legend?: LegendProps;
+  orderOptions: Array<OrderOptions | string>;
 };

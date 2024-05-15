@@ -35,7 +35,7 @@ export default (function calcVizDim(regl, store) {
   let inst_other_label;
   let inst_dim;
   const offset_heat = {};
-  const offcenter_magnitude = 0.075;
+  const offcenter_magnitude = 0.04; // align it more to the center
   _.each(["x", "y"], function (inst_axis) {
     inst_label = label[inst_axis];
     inst_other_label = other_label[inst_axis];

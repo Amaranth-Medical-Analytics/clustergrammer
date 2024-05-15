@@ -14,6 +14,7 @@ export default (function reorderMatrixArgs(
     store.select("order").new.row,
     store.select("order").new.col
   );
+
   camerasManager.mutateReglProps({
     attributes: {
       pos_att_new: {
@@ -22,4 +23,6 @@ export default (function reorderMatrixArgs(
       },
     },
   });
+
+  camerasManager.remakeMatrixArgs(store); // added to preserve the current state
 });

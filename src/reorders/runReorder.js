@@ -15,7 +15,8 @@ export default (function runReorder(
   const dispatch = store.dispatch;
   const new_order = ini_new_order
     .replace("sum", "rank")
-    .replace("var", "rankvar");
+    .replace("var", "rankvar")
+    .replace("anno", "cat_0_index");
   if (new_order !== "clust") {
     select("." + inst_axis + "_dendro_slider_svg").style("display", "none");
   }

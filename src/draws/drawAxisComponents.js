@@ -38,10 +38,7 @@ export default (function drawAxisComponents(
       });
     });
     // only show the dendrogram if the current axis is in clust ordering
-    if (
-      store.select("order").inst[inst_axis] === "clust" &&
-      store.select("order").new[inst_axis] === "clust"
-    ) {
+    if (store.select("order").new[inst_axis] === "clust") {
       const dendroArgs = makeDendroArgs(regl, store, inst_axis);
       regl(dendroArgs)();
     }

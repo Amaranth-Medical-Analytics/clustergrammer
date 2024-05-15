@@ -181,7 +181,8 @@ export default (function build_recluster_section(
       const x_offset = button_dim.x_trans * i + shift_x_order_buttons;
       return "translate(" + x_offset + ", " + y_offset_top + ")";
     })
-    .on("click", function (d) {
+    .on("click", function (e, d) {
+      // d.full was undefined added this to read it correctly
       dispatch(
         store.actions.mutateMatrixState({
           potential_recluster: {
@@ -265,7 +266,7 @@ export default (function build_recluster_section(
       const x_offset = button_dim.x_trans * i + shift_x_order_buttons;
       return "translate(" + x_offset + ", " + y_offset_bottom + ")";
     })
-    .on("click", function (d) {
+    .on("click", function (e, d) {
       dispatch(
         store.actions.mutateMatrixState({
           potential_recluster: {

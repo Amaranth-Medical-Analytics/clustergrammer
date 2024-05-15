@@ -6,6 +6,7 @@ import draw_webgl_layers from "./draws/drawWebglLayers";
 import type {
   ClustergrammerInstance,
   ClustergrammerProps,
+  OrderOptions,
 } from "./index.types";
 import recluster from "./recluster/recluster";
 import runReorder from "./reorders/runReorder";
@@ -151,12 +152,13 @@ function clustergrammer_gl(
         },
         reorder: (
           axis: "row" | "col" | string,
-          order: "clust" | "sum" | "var" | "ini" | string
+          order: OrderOptions | string
         ) => {
           const reorderState = store.select("order");
           const clean_order = order
             .replace("sum", "rank")
-            .replace("var", "rankvar");
+            .replace("var", "rankvar")
+            .replace("anno", "cat_0_index");
           if (reorderState.inst[axis] !== clean_order) {
             runReorder(
               regl,

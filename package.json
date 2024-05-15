@@ -1,6 +1,6 @@
 {
   "name": "@amaranth-medical-analytics/clustergrammer",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Clustergrammer with WebGL and regl for Javascript",
   "repository": {
     "type": "git",
