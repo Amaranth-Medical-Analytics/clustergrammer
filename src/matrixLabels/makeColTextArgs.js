@@ -133,7 +133,8 @@ export default function make_col_text_args(regl, store, zoom_function) {
       range: [0, 1],
     },
   };
-
+  
+  // add column based categories
   const cols = [...store.select("cat_data").col].reverse();
   cols?.map((col, index) => {
     drawCatTitles(regl, store, "col", col.cat_title, index);

@@ -106,6 +106,7 @@ export default function make_row_text_args(regl, store, zoom_function) {
     },
   };
 
+  // add row based categories
   const rows = store.select("cat_data").row;
   rows?.map((row, index) => {
     drawCatTitles(regl, store, "row", row.cat_title, index);

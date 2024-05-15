@@ -2,6 +2,7 @@ import vectorize_label from "../../matrixLabels/vectorizeLabel";
 import makeCatPositionArray from "../../cats/manager/makeCatPositionArray";
 import { MAX_LABEL_LENGTH } from "../../matrixLabels/labels.const";
 
+// function to create category title inside canvas
 export function drawCatTitles(regl, store, inst_axis, text, catIndex) {
   const {
     labels,
@@ -99,11 +100,13 @@ export function drawCatTitles(regl, store, inst_axis, text, catIndex) {
   
         }
       }`;
+
   const fragArg = `
       precision mediump float;
       void main () {
         gl_FragColor = vec4(0.2, 0.2, 0.2, 1.0);
       }`;
+
   regl({
     vert: vertArg,
     frag: fragArg,

@@ -181,16 +181,12 @@ export default (function build_recluster_section(
       const x_offset = button_dim.x_trans * i + shift_x_order_buttons;
       return "translate(" + x_offset + ", " + y_offset_top + ")";
     })
-    .attr("data-full", function (d) {
-      return d.full;
-    })
-    .on("click", function (d) {
-      const full = this.getAttribute("data-full");
-
+    .on("click", function (e, d) {
+      // d.full was undefined added this to read it correctly
       dispatch(
         store.actions.mutateMatrixState({
           potential_recluster: {
-            distance_metric: full,
+            distance_metric: d.full,
           },
         })
       );
@@ -270,16 +266,11 @@ export default (function build_recluster_section(
       const x_offset = button_dim.x_trans * i + shift_x_order_buttons;
       return "translate(" + x_offset + ", " + y_offset_bottom + ")";
     })
-    .attr("data-full", function (d) {
-      // Attach data-full attribute
-      return d.full;
-    })
-    .on("click", function (d) {
-      const full = this.getAttribute("data-full");
+    .on("click", function (e, d) {
       dispatch(
         store.actions.mutateMatrixState({
           potential_recluster: {
-            linkage_type: full,
+            linkage_type: d.full,
           },
         })
       );

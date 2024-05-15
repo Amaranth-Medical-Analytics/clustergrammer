@@ -18,7 +18,7 @@ export default (function reorderCatArgs(
       // update the attribute
       catArgsManager.updateCatArgsAttribute(inst_axis, cat_index);
 
-      catArgsManager.regenerateCatArgsArrs(store);
+      catArgsManager.regenerateCatArgsArrs(store); // added to preserve the current state fixed
     }
   });
 });
