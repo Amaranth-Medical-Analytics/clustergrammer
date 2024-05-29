@@ -126,7 +126,7 @@ const initialState: VisualizationState = (() => {
     tile_pix_width: 0,
     tile_pix_height: 0,
     max_zoom: 0,
-    max_num_text: 200,
+    max_num_text: 400, // number of texts to show up
     zoom_data: zoom_data as ZoomData,
     viz_dim: {} as VisualizationDimensions,
     reset_cameras: false,

@@ -116,7 +116,13 @@ export function drawCatTitles(regl, store, inst_axis, text, catIndex) {
     elements: textMesh.cells,
     uniforms: {
       inst_axis: inst_axis === "row" ? 0 : 1,
-      inst_offset: [finalPosition[0], catIndex * -catWidth],
+      // value for distance between catIndex is taken from makeCatArgs.ts
+      inst_offset: [
+        finalPosition[0],
+        inst_axis === "row"
+          ? 0.025 * (catIndex - 1)
+          : 0.025 * (catIndex - 1) + 0.02,
+      ],
       scale_text: scaleText,
       x_offset: inst_axis === "row" ? rowXOffset : colXOffset,
       y_offset:

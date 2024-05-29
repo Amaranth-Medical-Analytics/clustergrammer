@@ -1,4 +1,4 @@
-import { flatten } from "lodash";
+import _, { flatten } from "lodash";
 import rgbArrayToString from "../../colors/rgbArrayToString";
 import { ClustergrammerProps } from "../../index.types";
 import { NamespacedStore } from "../../state/store/store";
@@ -13,8 +13,9 @@ export const buildLegend = (store: NamespacedStore) => {
   const colors = store.select("cat_viz").mat_colors;
   const mat = store.select("network").mat;
   const flatMat = flatten<number>(mat);
-  const min = customRound(Math.min(...flatMat), 2);
-  const max = customRound(Math.max(...flatMat), 2);
+  // changed to lodash to solve Maximum stack size exceeded error
+  const min = customRound(_.min(flatMat), 2);
+  const max = customRound(_.max(flatMat), 2);
   const containerId = store.select("visualization").rootElementId;
 
   const legend = document.createElement("div");
@@ -24,7 +25,7 @@ export const buildLegend = (store: NamespacedStore) => {
     : LEGEND_HEIGHT;
   legend.style.width = LEGEND_WIDTH;
   legend.style.position = "absolute";
-  legend.style.top = args.legend?.y ? String(args.legend?.y) : "0";
+  legend.style.top = args.legend?.y ? String(args.legend?.y) : "100px";
   const side = args.legend?.side ?? "left";
   legend.style[side] = `calc(-${LEGEND_WIDTH} + ${args.legend?.x ?? "0px"}`;
   legend.style.display = "flex";
