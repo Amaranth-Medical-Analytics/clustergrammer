@@ -34,6 +34,31 @@ export default (function zoom_rules_low_mat(
     newZoomData.viz_offcenter =
       (viz_dim.canvas[canvas_dim] * viz_dim.offcenter[axis]) / 2;
   }
+
+  // remove gap when zooming in the clustergrammer in y-axis
+  const y_axis_low_offset = 13; // offset at the bottom
+  const y_axis_high_offset = 11.5; // offset at the top
+
+  if (
+    newZoomData &&
+    axis === "y" &&
+    newZoomData.cursor_position >= viz_dim.heat.y.max
+  ) {
+    newZoomData.viz_offcenter =
+      (viz_dim.canvas[canvas_dim] * viz_dim.offcenter[axis]) / 2 -
+      y_axis_low_offset;
+  }
+
+  if (
+    newZoomData &&
+    axis === "y" &&
+    (newZoomData.cursor_position <= viz_dim.heat.y.max ||
+      newZoomData.cursor_position <= viz_dim.heat.y.min)
+  ) {
+    newZoomData.viz_offcenter =
+      (viz_dim.canvas[canvas_dim] * viz_dim.offcenter[axis]) / 2 +
+      y_axis_high_offset;
+  }
   // ////////////////////////////////////////////////////////////////////////////
   // Sanitize Zoom
   // ////////////////////////////////////////////////////////////////////////////
