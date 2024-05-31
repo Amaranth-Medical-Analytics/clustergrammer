@@ -7,6 +7,7 @@ export default (function iniZoomRestrict(max_zoom, labels, viz_dim) {
     num_col / viz_dim.heat.width / (num_row / viz_dim.heat.height);
   // working on improved matrix zooming
   // used the code from clustergrammer repo for zooming in row or col direction
+  // https://github.com/ismms-himc/clustergrammer-gl/blob/master/src/zoom/ini_zoom_restrict.js
   const zoom_restrict = {};
   zoom_restrict.x = {};
   zoom_restrict.x.max = max_zoom;

@@ -116,7 +116,9 @@ export function drawCatTitles(regl, store, inst_axis, text, catIndex) {
     elements: textMesh.cells,
     uniforms: {
       inst_axis: inst_axis === "row" ? 0 : 1,
-      // value for distance between catIndex is taken from makeCatArgs.ts
+      // value for distance between catIndex is taken from these files
+      // https://github.com/GumusLab/clustergrammer/blob/master/src/cats/manager/makeCatArgs.ts line 52
+      // https://github.com/GumusLab/clustergrammer/blob/master/src/matrixLabels/makeRowTextArgs.js line 17
       inst_offset: [
         finalPosition[0],
         inst_axis === "row"
